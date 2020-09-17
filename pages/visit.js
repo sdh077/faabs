@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { startClock, serverRenderClock, initializeStore } from '../store'
 import Page from '../components/page'
-import Main from '../components/main/main'
+import Main from '../components/visit/main'
 import Head from 'next/head'
 
 const Index = () => {

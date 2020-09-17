@@ -30,9 +30,9 @@ const Nav = () => {
         <Box className='col-lg-7'>
           <UL className="nav">
             {
-            links.map(link => (
-              <li className="nav-item">
-                <Link href={link.link} key={link.title} className="nav-item">
+            links.map((link, index) => (
+              <li className="nav-item" key={index}>
+                <Link href={link.link} className="nav-item">
                   <a className="nav-link linkTxt" href="#">{link.title}</a>
                 </Link>
               </li>
@@ -58,6 +58,8 @@ const Nav = () => {
 const NavAbsol = styled.div`
   position: fixed;
   width: 100%;
+  z-index:999;
+  background-color: white;
 `
 const NavFrame = styled.div`
   height: 66px;
