@@ -21,13 +21,19 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-        <Html>
-            <Head />
-                <body>
-                <Main />
-                <NextScript />
-            </body>
-        </Html> 
-        );
-    }
+      <Html>
+        <Head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
