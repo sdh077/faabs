@@ -5,38 +5,42 @@ const Nav = () => {
   const links = [
     {
       title: 'ABOUT',
-      link: '',
-    },{
+      link: 'about',
+    }, {
       title: 'VISIT',
-      link: '',
-    },{
+      link: 'visit',
+    }, {
       title: 'SHOP',
-      link: '',
-    },{
+      link: 'shop',
+    }, {
       title: 'CLASS',
-      link: '',
-    },{
+      link: 'class',
+    }, {
       title: 'JOURNAL',
-      link: '',
-    },{
+      link: 'journal',
+    }, {
       title: 'CONTACT',
-      link: '',
+      link: 'contact',
     }
   ]
   return (
     <NavAbsol>
       <NavFrame className='shadow col-lg-12'>
-        <Logo className='col-lg-4'>faabs_coffee_roasters</Logo>
+        <Logo className='col-lg-4'>
+          <Link href='/' className="nav-item">
+            <a className="nav-link linkTxt" href="#">faabs_coffee_roasters</a>
+          </Link>
+        </Logo>
         <Box className='col-lg-7'>
           <UL className="nav">
             {
-            links.map((link, index) => (
-              <li className="nav-item" key={index}>
-                <Link href={link.link} className="nav-item">
-                  <a className="nav-link linkTxt" href="#">{link.title}</a>
-                </Link>
-              </li>
-            ))
+              links.map((link, index) => (
+                <li className="nav-item" key={index}>
+                  <Link href={link.link} className="nav-item">
+                    <a className="nav-link linkTxt" href="#">{link.title}</a>
+                  </Link>
+                </li>
+              ))
             }
           </UL>
         </Box>
@@ -85,13 +89,13 @@ const UL = styled.ul`
 `
 function LoginBtn() {
 
-  return(
+  return (
     <>
       <span className='login'>
         Log in
       </span>
       <style jsx>
-      {`
+        {`
         .login {
           margin-left: 10px;
           margin-right: 10px;
@@ -102,15 +106,15 @@ function LoginBtn() {
   )
 }
 function CartBtn() {
-  return(
+  return (
     <span>
       <Link href='/cart'>
         <a>
-          <i className="fa fa-cart-plus"/>
+          <i className="fa fa-cart-plus" />
         </a>
       </Link>
       <style jsx>
-      {`
+        {`
         a {
           color: black;
         }
