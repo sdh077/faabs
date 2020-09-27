@@ -1,17 +1,16 @@
 import styled from 'styled-components'
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, Fragment } from "react"
 
 const Bracket = ({ items }) => {
     const html = <span>hi</span>
-    console.log(items)
     return (
         <>
             <div className='frame'>
                 {items.map((i, index) => (
-                    <>
+                    <Fragment key={index}>
                         {index!==0 && <span> - </span>}
-                        <span key={index}>{i}</span>
-                    </>
+                        <span>{i}</span>
+                    </Fragment>
                 ))}
             </div>
             <style jsx>
