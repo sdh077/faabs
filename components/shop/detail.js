@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from "react"
 import Bracket from '../bracket'
+import { addCart } from '../../store/cart'
+import { useSelector, useDispatch } from 'react-redux'
+
 const Detail = ({ itemNo }) => {
     const item = {
         itemNo: 1,
@@ -115,6 +118,8 @@ function ItemInfo({ item }) {
                 setChoice(choice.concat(selectItem))
             )
     const changeChoice = (value, no) => setChoice(choice.map(c => c.no === no ? ({ ...c, cnt: c.cnt + value }) : c))
+    const dispatch = useDispatch();
+    const pushCart = () => choice.map(c => dispatch(addCart(c)))
     return (
         <div className='info'>
             <div>
@@ -146,7 +151,7 @@ function ItemInfo({ item }) {
             ))}
             <div>총 금액: {choice.reduce((acc, c) => acc + c.price * c.cnt, 0)}</div>
             <button>구매</button>
-            <button>장바구니</button>
+            <button onClick={()=>pushCart()}>장바구니</button>
             <style jsx>
                 {`
             .info {
