@@ -5,22 +5,22 @@ const Nav = () => {
   const links = [
     {
       title: 'ABOUT',
-      link: 'about',
+      link: '/about',
     }, {
       title: 'VISIT',
-      link: 'visit',
+      link: '/visit',
     }, {
       title: 'SHOP',
-      link: 'shop',
+      link: '/shop',
     }, {
       title: 'CLASS',
-      link: 'class',
+      link: '/class',
     }, {
       title: 'JOURNAL',
-      link: 'journal',
+      link: '/journal',
     }, {
       title: 'CONTACT',
-      link: 'contact',
+      link: '/contact',
     }
   ]
   return (
