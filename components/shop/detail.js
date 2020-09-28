@@ -111,8 +111,10 @@ function ItemInfo({item}) {
     null :
     (
         selectItem.cnt = 1,
+        selectItem.price +=item.price,
         setChoice(choice.concat(selectItem))
     )
+    const changeChoice = (value, no) => setChoice(choice.map(c => c.no === no ? ({...c, cnt: c.cnt + value}): c))
     return (
     <div className='info'>
         <div>
@@ -135,11 +137,14 @@ function ItemInfo({item}) {
         독립
         <OptionAlone opt={item.option} addChocie={addChocie}/>
         <hr/>
-        {choice.map(c => (
+        {choice.map((c,idx) => (
             <div key={c.no}>
-                {c.title} - {c.cnt}개
+                {c.title} - {c.cnt}개 
+                <button onClick={()=>changeChoice(1,c.no)}>+</button>
+                <button onClick={()=>changeChoice(-1,c.no)}>-</button>
             </div>
         ))}
+        <div>총 금액: {choice.reduce((acc, c)=>acc + c.price * c.cnt, 0)}</div>
         <style jsx>
             {`
             .info {
@@ -157,7 +162,7 @@ function OptionComb({opt, price = 0, addChocie}) {
             no: a.no + '#' + b.no
         })
     const title = opt.reduce((acc,o) => acc = acc + (acc !=='' ? '/' : '') + o.title, '')
-    const makeOpt = opt.map(o => o.units).reduce((acc,o) => acc = comb(o, acc, output),[])
+    const makeOpt = opt.map(o => o.units).reduce((acc,o) => comb(acc, o , output),[])
     return (
         <div>
             <div className='row col-lg-8 selectFrame'>
@@ -225,7 +230,7 @@ function OptionAlone({opt, addChocie}) {
     )
 }
 function comb(as, bs, output = null) {
-    if(bs.length === 0) return as
+    if(as.length === 0) return bs
     return as.flatMap(a => bs.map(b => output ? output(a, b) : a+b))
 }
 
