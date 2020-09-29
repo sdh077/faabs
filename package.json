@@ -13,6 +13,7 @@
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-naver-maps": "0.0.13",
     "react-redux": "7.2.0",
     "redux": "4.0.5",
     "redux-devtools-extension": "^2.13.2",
