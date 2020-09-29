@@ -20,7 +20,7 @@ const Nav = () => {
       link: '/journal',
     }, {
       title: 'CONTACT',
-      link: '/contact',
+      link: '/Contact/Contact',
     }
   ]
   return (
