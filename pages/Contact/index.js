@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { startClock, serverRenderClock, initializeStore } from '../../store'
 import Page from '../../components/page';
-import Detail from '../Contact/Detail';
+import Detail from './Detail';
 import Head from 'next/head'
 
-const Index = () => {
+const index = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     setInterval(() => dispatch(startClock(), 1000))
@@ -29,4 +29,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Index
+export default index
