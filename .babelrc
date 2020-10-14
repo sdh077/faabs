@@ -1,9 +1,11 @@
-
 {
   "presets": [
     "next/babel"
   ],
   "plugins": [
+    ["dynamic-import-node", {
+      "noInterop": true
+    }],
     "react-html-attrs",
     [
       "styled-components",

@@ -1,14 +1,20 @@
-import React from 'react';
-import { RenderAfterNavermapsLoaded } from 'react-naver-maps';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic'
 
-import NaverMapAPI from '../../components/naverMap/NaverMapAPI';
-
+const RenderAfterNavermapsLoaded = dynamic(
+    () => import('react-naver-maps'),
+    { ssr: false }
+)
+const NaverMapAPI = dynamic(
+    () => import('../../components/naverMap/NaverMapAPI'),
+    { ssr: false }
+)
 const Detail = () => {
-    return(
+    return (
         <RenderAfterNavermapsLoaded
-        ncpClientId={'og6yn3xm9s'}
-        error={<p>Maps Load Error</p>}
-        loading={<p>로딩중...</p>}>
+            clientId='og6yn3xm9s'
+            error={<p>Maps Load Error</p>}
+            loading={<p>로딩중...</p>}>
             <NaverMapAPI />
 
         </RenderAfterNavermapsLoaded>

@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import Page from '../../components/page';
-import Detail from './Detail';
+import Page from '../components/page';
 import Head from 'next/head'
-import NaverMapAPI from '../../components/naverMap/NaverMapAPI';
+import NaverMapAPI from '../components/naverMap/NaverMapAPI';
 
 const index = () => {
 
