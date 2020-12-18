@@ -28,6 +28,10 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=og6yn3xm9s">
+          </script>
         </body>
       </Html>
     );
